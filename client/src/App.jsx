@@ -5,7 +5,7 @@ function App() {
   const handleBuyNow = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post('http://loaclhost:3000/payment')
+    const response = await axios.post('http://localhost:3000/payment')
     if (response && response.status === 200) {
       console.log(response.data);
     }
