@@ -1,8 +1,18 @@
+import axios from 'axios';
+
 function App() {
 
+  const handleBuyNow = async (e) => {
+    e.preventDefault();
+
+    const response = await axios.post('http://loaclhost:3000/payment')
+    if (response && response.status === 200) {
+      console.log(response.data);
+    }
+  }
   return (
     <>
-      <button>
+      <button type="button" onClick={handleBuyNow}>
         Buy Now
       </button>
     </>
